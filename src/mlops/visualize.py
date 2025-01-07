@@ -1,14 +1,22 @@
 import matplotlib.pyplot as plt
 import torch
 import typer
-from mlops.model import MyAwesomeModel
+from mlops.model import dreamer
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 
 
 def visualize(model_checkpoint: str, figure_name: str = "embeddings.png") -> None:
-    """Visualize model predictions."""
-    model: torch.nn.Module = MyAwesomeModel()
+    """Visualize model predictions and save figure under reports/figures.
+    
+    Parameters:
+    - model_checkpoint: Path to model checkpoint.
+    - figure_name: Name of the figure to save.
+
+    Returns:
+    - None
+    """
+    model: torch.nn.Module = dreamer()
     model.load_state_dict(torch.load(model_checkpoint))
     model.eval()
     model.fc = torch.nn.Identity()

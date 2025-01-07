@@ -1,21 +1,27 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-from torch import nn
-
-
-# In[2]:
-
-
 import torch
 from torch import nn
 
 
-class MyAwesomeModel(nn.Module):
-    """My awesome model."""
+class dreamer(nn.Module):
+    """Implementation of my model for the MNIST dataset.
+    
+    The model architecture is as follows:
+    - Convolutional layer with 32 filters of size 3x3
+    - ReLU activation
+    - Max pooling with kernel size 2x2
+    - Convolutional layer with 64 filters of size 3x3
+    - ReLU activation
+    - Max pooling with kernel size 2x2
+    - Convolutional layer with 128 filters of size 3x3
+    - ReLU activation
+    - Max pooling with kernel size 2x2
+    - Flatten layer
+    - Dropout with probability 0.5
+    - Fully connected layer with 10 output units
+
+    Functions:
+    - forward(x: torch.Tensor) -> torch.Tensor: Forward pass through the model.
+    """
 
     def __init__(self) -> None:
         super().__init__()
@@ -26,7 +32,11 @@ class MyAwesomeModel(nn.Module):
         self.fc1 = nn.Linear(128, 10)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        """Forward pass."""
+        """Forward pass.
+        
+        Parameters:
+        - x: Input tensor of shape (batch_size, 1, 28, 28)
+        """
         x = torch.relu(self.conv1(x))
         x = torch.max_pool2d(x, 2, 2)
         x = torch.relu(self.conv2(x))
@@ -39,7 +49,7 @@ class MyAwesomeModel(nn.Module):
 
 
 if __name__ == "__main__":
-    model = MyAwesomeModel()
+    model = dreamer()
     print(f"Model architecture: {model}")
     print(f"Number of parameters: {sum(p.numel() for p in model.parameters())}")
 
