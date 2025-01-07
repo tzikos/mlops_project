@@ -56,10 +56,10 @@ started with Machine Learning Operations (MLOps).
 
 ### Main usage:
 
-- **Train**: python <train_script> *(e.g. python src/mlops/train.py)*
-- **Evaluate**: python <evaluate_script> <model_checkpoint> *(e.g. python src/mlops/evaluate.py models/model.pth)*
-- **Visualize**: python <visualize_script> <model_checkpoint> *(e.g. python src/mlops/visualize.py models/model.pth)* 
-- **View model structure**: python <model_script> *(e.g. python src/mlops/model.py)*
+- **Train**: python <train_script> `(e.g. python src/mlops/train.py)`
+- **Evaluate**: python <evaluate_script> <model_checkpoint> `(e.g. python src/mlops/evaluate.py models/model.pth)`
+- **Visualize**: python <visualize_script> <model_checkpoint> `(e.g. python src/mlops/visualize.py models/model.pth)` 
+- **View model structure**: python <model_script> `(e.g. python src/mlops/model.py)`
 
 ### OR use *invoke* (check tasks.py file):
 
