@@ -76,3 +76,17 @@ def build_docs(ctx: Context) -> None:
 def serve_docs(ctx: Context) -> None:
     """Serve documentation."""
     ctx.run("mkdocs serve --config-file docs/mkdocs.yaml", echo=True, pty=not WINDOWS)
+
+
+@task
+def conda(ctx, name: str = "dtu_mlops"):
+    ctx.run(f"conda env create -f environment.yml", echo=True)
+    ctx.run(f"conda activate {name}", echo=True)
+    ctx.run(f"pip install -e .", echo=True)
+
+@task
+def git(ctx, message):
+    ctx.run(f"git add .")
+    ctx.run(f"git commit -m '{message}'")
+    ctx.run(f"git push")
+

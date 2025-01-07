@@ -1,5 +1,8 @@
 docs/site/
 
+# Sensitive information that should not be commited yet. Wait until we resolve in class.
+.dvc/config
+
 # Data will be tracked by DVC
 data/
 
