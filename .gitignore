@@ -1,5 +1,8 @@
 docs/site/
 
+# Data will be tracked by DVC
+data/
+
 # test cache
 manual_test/
 
