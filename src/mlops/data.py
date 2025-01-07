@@ -4,10 +4,10 @@ import typer
 
 def normalize(images: torch.Tensor) -> torch.Tensor:
     """Normalize images as (X - mean(X)) / std(X).
-    
+
     Parameters:
     - images: Tensor of shape (N, 1, 28, 28)
-    
+
     Returns:
     - Normalized images
     """
@@ -16,11 +16,11 @@ def normalize(images: torch.Tensor) -> torch.Tensor:
 
 def preprocess_data(raw_dir: str, processed_dir: str) -> None:
     """Process raw data from data/raw and saves it to processed directory at data/processed.
-    
+
     Parameters:
     - raw_dir: Directory containing raw data.
     - processed_dir: Directory to save processed data.
-    
+
     Returns:
     - None
     """
@@ -50,10 +50,10 @@ def preprocess_data(raw_dir: str, processed_dir: str) -> None:
 
 def corrupt_mnist() -> tuple[torch.utils.data.Dataset, torch.utils.data.Dataset]:
     """Return train and test datasets for corrupt MNIST.
-    
+
     Parameters:
     - None
-    
+
     Returns:
     - Tuple of train and test datasets
     """

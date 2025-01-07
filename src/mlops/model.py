@@ -4,7 +4,7 @@ from torch import nn
 
 class dreamer(nn.Module):
     """Implementation of my model for the MNIST dataset.
-    
+
     The model architecture is as follows:
     - Convolutional layer with 32 filters of size 3x3
     - ReLU activation
@@ -33,7 +33,7 @@ class dreamer(nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """Forward pass.
-        
+
         Parameters:
         - x: Input tensor of shape (batch_size, 1, 28, 28)
         """
@@ -56,4 +56,3 @@ if __name__ == "__main__":
     dummy_input = torch.randn(1, 1, 28, 28)
     output = model(dummy_input)
     print(f"Output shape: {output.shape}")
-
