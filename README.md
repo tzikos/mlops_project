@@ -53,3 +53,16 @@ The directory structure of the project looks like this:
 Created using [mlops_template](https://github.com/SkafteNicki/mlops_template),
 a [cookiecutter template](https://github.com/cookiecutter/cookiecutter) for getting
 started with Machine Learning Operations (MLOps).
+
+## Usage
+
+- **Train**: python <train_script> *(e.g. python src/mlops/train.py)*
+- **Evaluate**: python <evaluate_script> <model_checkpoint> *(e.g. python src/mlops/evaluate.py models/model.pth)*
+- **Visualize**: python <visualize_script> <model_checkpoint> *(e.g. src/mlops/visualize.py models/model.pth)* 
+- **View model structure**: python <model_script> *(e.g. python src/mlops/model.py)*
+
+### OR use *invoke* (check tasks.py file)
+
+- **Train**: *invoke train*
+- **Preprocess data**: *invoke preprocess-data*
+- **Install requirements**: *invoke requirements*
