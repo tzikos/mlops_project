@@ -54,15 +54,23 @@ Created using [mlops_template](https://github.com/SkafteNicki/mlops_template),
 a [cookiecutter template](https://github.com/cookiecutter/cookiecutter) for getting
 started with Machine Learning Operations (MLOps).
 
-## Usage
+### Main usage:
 
 - **Train**: python <train_script> *(e.g. python src/mlops/train.py)*
 - **Evaluate**: python <evaluate_script> <model_checkpoint> *(e.g. python src/mlops/evaluate.py models/model.pth)*
-- **Visualize**: python <visualize_script> <model_checkpoint> *(e.g. src/mlops/visualize.py models/model.pth)* 
+- **Visualize**: python <visualize_script> <model_checkpoint> *(e.g. python src/mlops/visualize.py models/model.pth)* 
 - **View model structure**: python <model_script> *(e.g. python src/mlops/model.py)*
 
-### OR use *invoke* (check tasks.py file)
+### OR use *invoke* (check tasks.py file):
 
-- **Train**: *invoke train*
-- **Preprocess data**: *invoke preprocess-data*
-- **Install requirements**: *invoke requirements*
+- **Train**: `invoke train`
+- **Preprocess data**: `invoke preprocess-data`
+- **Install requirements**: `invoke requirements`
+- **Install development requirements**: `invoke dev-requirements`
+- **Build Docker images**: `invoke docker-build`
+- **Build documentation**: `invoke build-docs`
+- **Serve documentation**: `invoke serve-docs`
+- **Create environment**: `invoke create-environment`
+- **Run tests**: `invoke test`
+- **Git commit and push**: `invoke git --message "your commit message"`
+- **Setup Conda environment**: `invoke conda --name "your_env_name"`

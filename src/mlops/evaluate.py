@@ -1,6 +1,6 @@
 import torch
 import typer
-from model import dreamer
+from mlops.model import dreamer
 
 from data import corrupt_mnist
 
