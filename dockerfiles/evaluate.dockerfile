@@ -19,5 +19,4 @@ WORKDIR /
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
 RUN pip install . --no-deps --no-cache-dir --verbose
 
-# ENTRYPOINT ["python", "-u", "src/mlops/train.py"]
-ENTRYPOINT ["sh", "-c", "python -u src/mlops/train.py && python -u src/mlops/visualize.py"]
+ENTRYPOINT ["python", "-u", "src/mlops/evaluate.py"]

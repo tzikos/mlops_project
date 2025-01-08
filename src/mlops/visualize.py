@@ -7,7 +7,7 @@ from sklearn.manifold import TSNE
 from mlops.model import dreamer
 
 
-def visualize(model_checkpoint: str, figure_name: str = "embeddings.png") -> None:
+def visualize(model_checkpoint: str = "/models/model.pth", figure_name: str = "embeddings.png") -> None:
     """Visualize model predictions and save figure under reports/figures.
 
     Parameters:

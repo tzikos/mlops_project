@@ -54,7 +54,7 @@ Created using [mlops_template](https://github.com/SkafteNicki/mlops_template),
 a [cookiecutter template](https://github.com/cookiecutter/cookiecutter) for getting
 started with Machine Learning Operations (MLOps).
 
-### Main usage:
+## Main usage:
 
 - **Train**: python <train_script> (e.g. `python src/mlops/train.py`)
 - **Evaluate**: python <evaluate_script> <model_checkpoint> (e.g. `python src/mlops/evaluate.py models/model.pth`)
@@ -74,3 +74,17 @@ started with Machine Learning Operations (MLOps).
 - **Run tests**: `invoke test`
 - **Git commit and push**: `invoke git --message "your commit message"`
 - **Setup Conda environment**: `invoke conda --name "your_env_name"`
+
+## Docker:
+
+### Build:
+
+- **Train**: `docker build -f dockerfiles/train.dockerfile . -t train:latest`
+- **Evaluate**: `docker build -f dockerfiles/evaluate.dockerfile . -t evaluate:latest`
+
+### Run:
+
+- **Train and Visualize**: `docker run --name training_and_visualize -v $(pwd)/models:/models/ -v $(pwd)/reports/figures/:/reports/figures train:latest`
+- **Evaluate**: `docker run -it --rm -v $(pwd)/models/model.pth:/models/model.pth -v $(pwd)/data:/data evaluate:latest`
+
+> **Important note**: As visible above, docker shares the models and reports folders across the host device and the containers. Therefore, *model.pth* file is the one created in the container and is built with CPU, not MPS that my host device has (Mac M1).
