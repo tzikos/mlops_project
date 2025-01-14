@@ -1,9 +1,8 @@
-from mlops.data import corrupt_mnist
+from src.mlops.data import corrupt_mnist
 import torch
 import warnings
 import os.path
 import pytest
-# from tests2 import _PROJECT_ROOT
 
 @pytest.mark.skipif(not os.path.exists("./data/processed"), reason="Data files not found")
 def test_data():

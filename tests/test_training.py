@@ -1,5 +1,5 @@
-from mlops.model import dreamer
-from mlops.data import corrupt_mnist
+from src.mlops.model import dreamer
+from src.mlops.data import corrupt_mnist
 
 import torch
 import warnings
