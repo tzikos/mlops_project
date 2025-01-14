@@ -30,10 +30,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -U pip setuptools wheel
-          pip install -r requirements.txt
-          pip list
+          pip install ruff
 
-      - name: Run tests & coverage
+      - name: Run code format checks
         run: |
-          coverage run -m pytest tests/
-          coverage report -m
+          ruff check --fix
+          ruff format

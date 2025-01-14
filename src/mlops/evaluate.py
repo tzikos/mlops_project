@@ -1,10 +1,11 @@
 import torch
 import typer
-from mlops.model import dreamer
 
 from data import corrupt_mnist
+from mlops.model import dreamer
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
+
 
 def evaluate(model_checkpoint: str = "/models/model.pth") -> None:
     """Evaluate a trained model and prints test accuracy for the whole test set.

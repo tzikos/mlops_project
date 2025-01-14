@@ -1,13 +1,17 @@
-from src.mlops.model import dreamer
-import torch
 import warnings
+
 import pytest
+import torch
+
+from src.mlops.model import dreamer
+
 
 def test_model():
     model = dreamer()
     x = torch.randn(1, 1, 28, 28)
     y = model(x)
     assert y.shape == (1, 10)
+
 
 warnings.filterwarnings("ignore")
 
