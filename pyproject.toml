@@ -30,7 +30,10 @@ line-length = 120
 lint.select = ["I"]
 
 [tool.coverage.run]
-omit = ["tests/*"]
+omit = ["tests2/*"]
+
+[tool.coverage.report]
+omit = ["/private/var/*"]
 
 [tool.mypy]
 ignore_missing_imports = true
