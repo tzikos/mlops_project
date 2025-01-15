@@ -1,0 +1,9 @@
+[core]
+    remote = remote_storage
+['remote "storage"']
+    url = gdrive://154193wgF5wnK29WEpMbXHSHbs_OYpVqO
+    gdrive_client_id = 70756344349-vr4ju9o6n28tsrg1le0dljaijfsm8k10.apps.googleusercontent.com
+    gdrive_client_secret = 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
+['remote "remote_storage"']
+    url = gs://mlops-data-bucket-tzikos/
+    version_aware = true
